@@ -31,9 +31,9 @@ public final class FileUtil {
 	}
 	
 	public static void main(String[] args) throws Exception {
-//		FileUtil.walkTree(new File("E:\\Andrew's Files（temp）\\dev work\\docs, excels, table sheets, sample data"));
+//		FileUtil.walkTree(new File("E:\\Andrew's Files锛坱emp锛塡\dev work\\docs, excels, table sheets, sample data"));
 		
-//		File file = new File("C:\\Users\\Administrator\\Desktop\\商品比较器.ods");
+//		File file = new File("C:\\Users\\Administrator\\Desktop\\鍟嗗搧姣旇緝鍣�.ods");
 //		System.out.println(file.length());
 //		System.out.println(file.getFreeSpace());
 //		System.out.println(file.getUsableSpace());
@@ -46,7 +46,7 @@ public final class FileUtil {
 //		System.out.println(file.getCanonicalPath());
 		
 		// read all java files in the given directory
-//		FileUtil.filter(new File("E:\\Andrew's Files（misc）\\2. projects and programs"), new FileFilter(){
+//		FileUtil.filter(new File("E:\\Andrew's Files锛坢isc锛塡\2. projects and programs"), new FileFilter(){
 //			public boolean accept(File file) {
 //				return file.getName().endsWith(".java");
 //			}
@@ -78,7 +78,7 @@ public final class FileUtil {
 //		
 //		outStream.close();
 		
-//		File file = new File("C:\\Users\\Administrator\\Desktop\\本机源码库.txt");
+//		File file = new File("C:\\Users\\Administrator\\Desktop\\鏈満婧愮爜搴�.txt");
 //		FileInputStream in = new FileInputStream(file);
 ////		FileReader fr = new FileReader(file);
 //		InputStreamReader fr = new InputStreamReader(in, "UTF-8");
@@ -94,8 +94,8 @@ public final class FileUtil {
 //		}
 		
 //		File[] files = new File[]{
-//			new File("C:\\Users\\Administrator\\Desktop\\本机源码库.txt"),
-//			new File("C:\\Users\\Administrator\\Desktop\\电子机械爱好者.txt"),
+//			new File("C:\\Users\\Administrator\\Desktop\\鏈満婧愮爜搴�.txt"),
+//			new File("C:\\Users\\Administrator\\Desktop\\鐢靛瓙鏈烘鐖卞ソ鑰�.txt"),
 //			new File("C:\\Users\\Administrator\\Desktop\\TO-DO-LIST.txt"),
 //		};
 //
@@ -204,16 +204,22 @@ public final class FileUtil {
 	}
 	
 	private static List<FileNodeInfo> fileNodes = new ArrayList<FileNodeInfo>();
+	private static List<File> resultList = new ArrayList<File>();
 	
 	public static final List<FileNodeInfo> getFilteredFileNodes() {
 		return fileNodes;
 	}
 	
+	public static final List<File> getFilteredFiles() {
+		return resultList;
+	}
+	
 	public static final void filter(File file, FileFilter filter) {
 		boolean accepted = filter.accept(file);
 		if (accepted) {
-			FileNodeInfo node = new FileNodeInfo(file);
-			fileNodes.add(node);
+			/*FileNodeInfo node = new FileNodeInfo(file);
+			fileNodes.add(node);*/
+			resultList.add(file);
 		}
 		boolean isDir = file.isDirectory();
 		if (isDir) {
@@ -363,7 +369,7 @@ public final class FileUtil {
 			byte[] buf = new byte[(int)bufSize];
 			int len;
 			while ((len=fin.read(buf))!=-1) {
-				for (int j = 0; j < readTimesCount; j++) {
+				for (int j = 0; j < 10/*readTimesCount*/; j++) {
 					fouts[i].write(buf, 0, len);
 				}
 				i++;
