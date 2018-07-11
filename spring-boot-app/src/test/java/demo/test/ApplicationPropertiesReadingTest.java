@@ -1,5 +1,6 @@
 package demo.test;
 
+import static org.junit.Assert.*;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,8 +12,40 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @SpringBootTest()
 @RunWith(SpringRunner.class)
-public class ConfigValueTest {
-	@Value("${book.name}")
+public class ApplicationPropertiesReadingTest {
+	
+	@Value("${spring.profiles.active}")
+	String activeProfile;
+	
+	@Value("${profile}")
+	String profile;
+	
+	@Value("${description}")
+	String description;
+	
+	@Test
+	public void test() {
+		switch (activeProfile) {
+			case "dev" : 
+				assertEquals("dev_envrimont", profile);
+				assertEquals("this is a development environment", description);
+			break;
+			case "test" : 
+				assertEquals("test_envrimont", profile);
+				assertEquals("this is a test environment", description);
+			break;
+			case "prod" : 
+				assertEquals("prod_envrimont", profile);
+				assertEquals("this is a production environment", description);
+			break;
+			default:
+			break;
+		}
+
+	}
+	
+	
+/*	@Value("${book.name}")
 	String bookName;
 	@Value("${book.author}")
 	String bookAuthor;
@@ -24,7 +57,7 @@ public class ConfigValueTest {
 	@Autowired
 	BookConfigBean bookConfig;
 	
-//	@Ignore
+	@Ignore
 	@Test
 	public void testConfigValueRead() {
 		System.out.println(bookName);
@@ -39,5 +72,5 @@ public class ConfigValueTest {
 		System.out.println(bookConfig.getAuthor());
 		System.out.println(bookConfig.getPrice());
 		System.out.println(bookConfig.getDynasty());
-	}
+	}*/
 }
