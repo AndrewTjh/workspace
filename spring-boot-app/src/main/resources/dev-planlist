@@ -1,0 +1,11 @@
+1. model
+2. ui
+3. basic crud(no need to do)
+4. business implementation
+
+
+1. data source
+2. dao
+3. service (transaction)
+4. logging
+5. 

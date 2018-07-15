@@ -21,6 +21,7 @@ public class FileUtilTest {
 		fileNodes.forEach(action);
 	}
 	
+	@Ignore
 	@Test
 	public void testFileFilter2() throws Exception {
 		FileFilter filter = (file)->file.getName().toLowerCase().endsWith(".chm");

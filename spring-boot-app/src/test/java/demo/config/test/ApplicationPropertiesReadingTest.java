@@ -1,4 +1,4 @@
-package demo.test;
+package demo.config.test;
 
 import static org.junit.Assert.*;
 import org.junit.Ignore;
