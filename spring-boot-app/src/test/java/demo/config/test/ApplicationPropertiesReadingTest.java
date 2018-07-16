@@ -26,51 +26,21 @@ public class ApplicationPropertiesReadingTest {
 	@Test
 	public void test() {
 		switch (activeProfile) {
-			case "dev" : 
-				assertEquals("dev_envrimont", profile);
-				assertEquals("this is a development environment", description);
-			break;
-			case "test" : 
-				assertEquals("test_envrimont", profile);
-				assertEquals("this is a test environment", description);
-			break;
-			case "prod" : 
-				assertEquals("prod_envrimont", profile);
-				assertEquals("this is a production environment", description);
-			break;
-			default:
-			break;
+		case "dev" : 
+			assertEquals("dev_envrimont", profile);
+			assertEquals("this is a development environment", description);
+		break;
+		case "test" : 
+			assertEquals("test_envrimont", profile);
+			assertEquals("this is a test environment", description);
+		break;
+		case "prod" : 
+			assertEquals("prod_envrimont", profile);
+			assertEquals("this is a production environment", description);
+		break;
+		default:
+		break;
 		}
-
 	}
 	
-	
-/*	@Value("${book.name}")
-	String bookName;
-	@Value("${book.author}")
-	String bookAuthor;
-	@Value("${book.price}")
-	Double bookPrice;
-	@Value("${book.dynasty}")
-	String bookDynasty;
-	
-	@Autowired
-	BookConfigBean bookConfig;
-	
-	@Ignore
-	@Test
-	public void testConfigValueRead() {
-		System.out.println(bookName);
-		System.out.println(bookAuthor);
-		System.out.println(bookPrice);
-		System.out.println(bookDynasty);
-	}
-	
-	@Test
-	public void testBookConfig() {
-		System.out.println(bookConfig.getName());
-		System.out.println(bookConfig.getAuthor());
-		System.out.println(bookConfig.getPrice());
-		System.out.println(bookConfig.getDynasty());
-	}*/
 }

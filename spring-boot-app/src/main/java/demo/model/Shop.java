@@ -6,6 +6,7 @@ public class Shop {
 	Long id;
 	String name;
 	Date creationDate;
+	Date expirationDate;
 	String status;
 	Integer score;
 	Integer type;

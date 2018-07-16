@@ -8,13 +8,13 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @PropertySource(encoding="UTF-8",value={"classpath:book.properties"})
 public class BookConfigBean {
-	@Value("${book.name}")
+	@Value("${book1.name}")
 	String name;
-	@Value("${book.author}")
+	@Value("${book1.author}")
 	String author;
-	@Value("${book.dynasty}")
+	@Value("${book1.dynasty}")
 	String dynasty;
-	@Value("${book.price}")
+	@Value("${book1.price}")
 	Double price;
 	public String getName() {
 		return name;

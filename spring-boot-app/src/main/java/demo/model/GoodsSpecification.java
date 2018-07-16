@@ -1,6 +1,7 @@
 package demo.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class GoodsSpecification {
 	Long id;
@@ -11,4 +12,6 @@ public class GoodsSpecification {
 	Date expiryDate;
 	Date producationDate;
 	Integer reservationCount;
+	List<String> goodsDemostrationImages;
+	List<String> goodsDescriptiveImages;
 }
