@@ -16,7 +16,7 @@ public class DruidConfig {
 //	#spring.datasource.druid.WebStatFilter.enabled=true
 //	#spring.datasource.druid.StatViewServlet.enabled=true
 	
-	@Bean
+//	@Bean
 	public ServletRegistrationBean druidWebStatFilter() {
 		ServletRegistrationBean servletRegBean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
 		servletRegBean.addInitParameter("loginUsername", "admin");
@@ -25,7 +25,7 @@ public class DruidConfig {
 		return servletRegBean;
 	}
 	
-	@Bean
+//	@Bean
 	public FilterRegistrationBean druidStatViewFilter() {
 		FilterRegistrationBean filterRegBean = new FilterRegistrationBean(new WebStatFilter());
 		filterRegBean.addInitParameter("urlPatterns", "/*");

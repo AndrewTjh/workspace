@@ -1,5 +1,10 @@
 package demo.model;
 
-public class Seller extends User {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+//@Table
+//@Entity
+public class Seller /*extends User*/ {
 
 }
